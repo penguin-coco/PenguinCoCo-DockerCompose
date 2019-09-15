@@ -28,7 +28,7 @@
 
    即可關閉所有**docker-compose.yml**內定義的container。
 
-   Note：如果添加**--volume**參數，代表一併刪除volume。
+   Note：如果添加<b>--volume</b>參數，代表一併刪除volume。
 
 ### PostgreSQL 備份及還原資料庫的指令
 
