@@ -52,7 +52,7 @@ docker exec -it <containerId> </bin/bash or /bin/sh>
 pg_dump -h <host> -p <port> -U <username> -W -F <fileFormat> -b -v -f <outputFilePath> <dbName>
 ```
 
-Note：<b><fileFormat></b>可以為**c(custom形式，最靈活)**、**t(tar檔形式)**
+Note：<b>fileFormat</b>可以為**c(custom形式，最靈活)**、**t(tar檔形式)**
 
 還原指令：
 
@@ -60,4 +60,4 @@ Note：<b><fileFormat></b>可以為**c(custom形式，最靈活)**、**t(tar檔�
 pg_restore -h <host> -p <port> -U <username> -W -d <dbName> -v <backupFilePath>
 ```
 
-Note：<b><dbName></b>該資料庫需要先建立，否則會報錯
+Note：<b>dbName</b>該資料庫需要先建立，否則會報錯
