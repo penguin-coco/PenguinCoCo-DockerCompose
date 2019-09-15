@@ -1,0 +1,46 @@
+version: '3'
+services:
+  nginx:
+    container_name: 'nginx'
+    build:
+      context: ./
+      dockerfile: ./docker/nginx/Dockerfile
+    restart: always
+    ports:
+      - "80:80"
+      - "8000:8000"
+    depends_on:
+      - backend
+  db:
+    container_name: 'postgres'
+    image: postgres
+    environment:
+      POSTGRES_PASSWORD: root
+    volumes:
+      - pgdata:/var/lib/postgresql/data/
+    ports:
+      - "5432:5432"
+  dbGUI:
+    container_name: 'pgadmin'
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "kenny@example.com"
+      PGADMIN_DEFAULT_PASSWORD: "kenny"
+    ports:
+      - "16543:80"
+    depends_on:
+      - db
+  backend:
+    container_name: 'penguincoco-backend'
+    build:
+      context: ./
+      dockerfile: ./docker/backend/Dockerfile
+    image: penguincoco-jar:latest
+    entrypoint: ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+    restart: always
+    ports:
+      - "8081:8081"
+    depends_on:
+      - db
+volumes:
+  pgdata:
