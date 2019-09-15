@@ -2,11 +2,11 @@
 
 ### 前端
 
-專案版本如果更新，只需更換**/docker/nginx/dist資料夾**
+專案版本如果更新，只需更換<b>/docker/nginx/dist資料夾</b>
 
 ### 後端
 
-專案版本如果更新，只需更換**/docker/backend/jar檔案**
+專案版本如果更新，只需更換<b>/docker/backend/jar檔案</b>
 
 ### 部署及關閉方式
 
@@ -52,7 +52,7 @@ docker exec -it <containerId> </bin/bash or /bin/sh>
 pg_dump -h <host> -p <port> -U <username> -W -F <fileFormat> -b -v -f <outputFilePath> <dbName>
 ```
 
-Note：**<fileFormat>**可以為**c(custom形式，最靈活)**、**t(tar檔形式)**
+Note：<b><fileFormat></b>可以為**c(custom形式，最靈活)**、**t(tar檔形式)**
 
 還原指令：
 
@@ -60,4 +60,4 @@ Note：**<fileFormat>**可以為**c(custom形式，最靈活)**、**t(tar檔形�
 pg_restore -h <host> -p <port> -U <username> -W -d <dbName> -v <backupFilePath>
 ```
 
-Note：**<dbName>**該資料庫需要先建立，否則會報錯
+Note：<b><dbName></b>該資料庫需要先建立，否則會報錯
